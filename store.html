@@ -16,7 +16,7 @@
 
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="style.css">
-        <script src="index.ts" defer></script>
+
 
         <script>
                 module.exports = {
@@ -26,9 +26,11 @@
                                                 '360': '360deg',
                                         },
                                         width: {
-                                                '900': '900px', '300': '32rem',
+                                                '900': '900px',
+                                                '300': '32rem',
                                                 '400': '35rem',
                                                 '200': '22rem',
+                                                '250': '250px',
                                                 '300': '300px'
                                         },
 
@@ -39,521 +41,945 @@
                         }
                 }
         </script>
+        <script src="script.ts" defer></script>
 </head>
 
 <body class="">
 
-        <header class="pt-3 pb-3 mb-14 bg-slate-400 ">
+        <header class="pt-3 pb-3 mb-14 bg-slate-400 fixed w-full py-4">
                 <div class="container w-full flex justify-between">
-                        <p class="text-sm sm:text-xl pt-2">Welcome, <span id="usersName"></span></p>
+                        <p class="text-sm sm:text-xl pt-2"> <a href="./store.html" class="hover:text-slate-200"> NitShoes</a></p>
 
                         <div class="flex">
-                        <a href="#sneakers" class="text-sm sm:text-xl pr-5 pt-2 transition ease-in-out delay-150 duration-200 hover:scale-105 cursor-pointer hover:text-slate-950">Sneakers</a>
-                        <a href="#office" class="text-sm sm:text-xl pr-5 pt-2 transition ease-in-out delay-150 duration-200 hover:scale-105 cursor-pointer hover:text-slate-950">Office</a>
-                        <img src="./images/shopping-cart.png" id="cart-page" class="cursor-pointer" width="30px" alt="">
-                </div>
+                                <a href="#sneakers"
+                                        class="text-sm sm:text-xl pr-5 pt-2 transition ease-in-out delay-150 duration-200 hover:scale-105 cursor-pointer hover:text-slate-950">Sneakers</a>
+                                <a href="#office"
+                                        class="text-sm sm:text-xl pr-5 pt-2 transition ease-in-out delay-150 duration-200 hover:scale-105 cursor-pointer hover:text-slate-950">Office</a>
+                                <img src="./images/shopping-cart.png" id="cart-page" class="cursor-pointer" width="30px"
+                                        alt="">
+                        </div>
                 </div>
         </header>
 
-        <section class="container w-full">
+        <section class="container w-full py-20" id="shop-spot">
 
-                <p id="sneakers" class="cursor-pointer text-xl sm:text-2xl w-28 m-auto mb-12 hover:border-b-4 border-slate-400">
+                <p id="sneakers"
+                        class="cursor-pointer text-xl sm:text-2xl w-28 m-auto mb-12 hover:border-b-4 border-slate-400">
                         SNEAKERS
                 </p>
 
                 <div class="row">
 
-                        
+
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/shoes-g04f8b45df_1280.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <img src="./images/shoes-g04f8b45df_1280.jpg"
+                                        class="shadow shadow-slate-100 w-[250px] sm:w-[300px] shoesImg rounded-t-lg" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>DC Sneaker</p>
                                         <p>$24.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <!-- <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer" id=">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2 decrp> -->
+                                        <button class="hover:bg-slate-600 hover:pl-2 hover:pr-2" id="decrease">-</button>
+                                        <input type="text" value="0" class="bg-slate-400 text-center" id="effect">
+                                        <button class="hover:bg-slate-600 hover:pl-2 hover:pr-2" id="increase">+</button>
+                                 </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
+                                </div>
+                                
+                        </div>
 
+                        <div
+                                class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
+                                <img src="./images/browncool.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Cool Brown</p>
+                               <p>$30.00</p>
+                                </div>
 
+                                <div class="sm:w-[300px] w-[250px] mt-0 mb-0 bg-slate-400 p-2 text-center flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] mt-0 hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 p-2 text-center flex justify-center">
+                                        
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/browncool.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$30.00</p>
+                                <img src="./images/calmblueshoe.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Full Sole</p>
+                               <p>$40.2</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/calmblueshoe.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$40.2</p>
+                                <img src="./images/cleanblackandyellow.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Cool b&y</p>
+                               <p>$20.1</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/cleanblackandyellow.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$20.1</p>
+                                <img src="./images/coolblueandyellow.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>BB Sneakers</p>
+                               <p>$49.4</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/coolblueandyellow.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$49.4</p>
+                                <img src="./images/coolbluewomen.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Women OW</p>
+                               <p>$23.2</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/coolbluewomen.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$23.2</p>
+                                <img src="./images/lemonyellow.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Unisex wear</p>
+                               <p>$24.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/lemonyellow.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$24.3</p>
+                                <img src="./images/lovethis.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Jean Unisex</p>
+                               <p>$27.8</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/lovethis.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$27.8</p>
+                                <img src="./images/lovethistoo.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Fine Sole</p>
+                               <p>$30.5</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/lovethistoo.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$30.5</p>
+                                <img src="./images/orangecoolshoe.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Anytime wear</p>
+                               <p>$20.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/orangecoolshoe.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$20.3</p>
+                                <img src="./images/orangerope.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Fast Sneakers</p>
+                               <p>$26.7</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/orangerope.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$26.7</p>
-                                        
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
+                                <img src="./images/yellowboogie.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-
-                                </div>
-                        </div>
-
-                        <div
-                                class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/yellowboogie.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
-
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Boogie Yellow</p>
                                         <p>$46.7</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/allstarblue.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/allstarblue.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>NIce All S</p>
                                         <p>$35.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/yellow-allstar.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/yellow-allstar.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Better All S</p>
                                         <p>$30.4</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/womenshort.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/womenshort.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Normal Female OW</p>
                                         <p>$24.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/pexels-web-donut-19090.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/pexels-web-donut-19090.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Chill Sneakers</p>
                                         <p>$15.2</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/pexels-shane-aldendorff-786003.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/pexels-shane-aldendorff-786003.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Rugged</p>
                                         <p>$23.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/anotherone.jpg" height="30px" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/anotherone.jpg" height="30px"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Multi-color Cool</p>
                                         <p>$23.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/lastsneakers.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/lastsneakers.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Lovely Sole Yellow</p>
                                         <p>$24.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/lastonemore.jpg" width="300px"
-                                        class="shadow shadow-slate-100 rounded-t-lg" alt="">
+                                <img src="./images/lastonemore.jpg"
+                                        class="shadow shadow-slate-100 shoesImg rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Nice Men</p>
                                         <p>$24.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
 
                 </div>
 
-                <p id="office" class="cursor-pointer text-xl sm:text-2xl w-24 m-auto pt-10 mb-12 hover:border-b-4 border-slate-400">
+                <p id="office"
+                        class="cursor-pointer text-xl sm:text-2xl w-24 m-auto pt-10 mb-12 hover:border-b-4 border-slate-400">
                         OFFICE
                 </p>
                 <div class="row">
 
-                        
+
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office1.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$41.8</p>
+                                <img src="./images/office1.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Divided Neat</p>
+                               <p>$41.8</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office2.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$30</p>
+                                <img src="./images/office2.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Smoothly Neat</p>
+                               <p>$30</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office3.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$40.2</p>
+                                <img src="./images/office3.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>AS Neat</p>
+                               <p>$40.2</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office4.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$35</p>
+                                <img src="./images/office4.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Big Men OFF</p>
+                               <p>$35</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office5.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$49.4</p>
+                                <img src="./images/office5.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Clean Office Shoe</p>
+                               <p>$49.4</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office6.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$35</p>
+                                <img src="./images/office6.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Nude Black</p>
+                               <p>$35</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office7.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$47</p>
+                                <img src="./images/office7.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Konk Mouth</p>
+                               <p>$47</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office8.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$45</p>
+                                <img src="./images/office8.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Long Neat</p>
+                               <p>$45</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office9.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$42.6</p>
+                                <img src="./images/office9.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Longer Neat</p>
+                               <p>$42.6</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office10.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$40.3</p>
+                                <img src="./images/office10.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Neat Cool Student</p>
+                               <p>$40.3</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office11.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
-                                        <p>$38.7</p>
+                                <img src="./images/office11.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                <p>Thick Black</p>
+                               <p>$38.7</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office12.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
+                                <img src="./images/office12.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>VVS One</p>
                                         <p>$46.7</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office13.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
+                                <img src="./images/office13.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Dolphin Mouth</p>
                                         <p>$41.7</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office14.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
+                                <img src="./images/office14.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Fading Black</p>
                                         <p>$42.4</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office15.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
+                                <img src="./images/office15.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Neat But Fading</p>
                                         <p>$45</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
-
-
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                         <div
                                 class="col-lg-4 col-xl-3 col-md-6 col-sm-12 img-responsive pt-10 flex flex-col justify-center items-center">
-                                <img src="./images/office16.jpg" width="300px"
-                                        class="shadow shadow-slate-500 rounded-t-lg" alt="">
+                                <img src="./images/office16.jpg"
+                                        class="shadow shadow-slate-500 rounded-t-lg sm:w-[300px] w-[250px]" alt="">
 
-                                <div class="w-[300px] bg-slate-300 p-2 flex justify-between">
+                                <div class="sm:w-[300px] w-[250px] bg-slate-300 p-2 flex justify-between">
+                                        <p>Oily Black</p>
                                         <p>$40</p>
+                                </div>
+
+                                <div class="sm:w-[300px] w-[250px] bg-slate-400 p-2 text-center mt-0 mb-0 flex justify-center">
+                                        <p class="ml-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">+</p>
+                                        <p class="ml-20 mr-20 cursor-pointer">0</p>
+                                        <p class="mr-10 cursor-pointer hover:bg-slate-600 hover:pl-2 hover:pr-2">-</p>
+                                </div>
+
+                                <div class="sm:w-[300px] hover:bg-slate-600 cursor-pointer w-[250px] bg-slate-500 mt-0 p-2 text-center flex justify-center">
                                         
-                                        <img src="./images/shopping-cart.png" width="20px" class="cursor-pointer cartAdd" alt="">
+                                        <p class="">Add to Cart </p>
+                                        <img src="./images/shopping-cart.png" width="20px"
+                                                class="cursor-pointer cartAdd" alt="">
+                                        
                                 </div>
                         </div>
 
                 </div>
+        </section>
+
+        <section class="flex flex-col items-center py-20" id="profile" style="display: none;">
+                <div class="m-auto flex flex-col justify-center items-center">
+                        <img src="./images/user.png" width="200px" alt="">
+                </div>
+                <div class="pt-10 text-center sm:text-xl text-sm">
+                        <p>Name: <span class="usersName "></span></p>
+                        <p>Email: <span class="usersEmail"></span></p>
+
+                </div>
+
+                <!-- <div>
+                        <button>Close</button>
+                        <button></button>
+                </div> -->
         </section>
 
         <section class="contact mt-12 w-auto border-t-4 border-slate-300" id="contact">
@@ -571,6 +997,8 @@
                                 <a href="mailto:nitshoes@gmail.com">nitshoes@gmail.com</a>
                         </div>
         </section>
+
+
         <footer class="bg-slate-300">
                 <div class="container w-full">
                         <div id="location" class="text-sm sm:text-xl">
@@ -588,7 +1016,7 @@
                 </div>
         </footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="index.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
