@@ -38,7 +38,7 @@ var ShoppingCart = /** @class */ (function () {
     function ShoppingCart() {
         var _this = this;
         this.setUpEventListeners = function () { return __awaiter(_this, void 0, void 0, function () {
-            var createBtn, shopSite, profilePage, cartBtn, increaseBtn, decreaseBtn, number;
+            var createBtn, shopSite, profilePage, cartBtn, increaseBtn, decreaseBtn, effect;
             var _this = this;
             return __generator(this, function (_a) {
                 createBtn = document.getElementById('create');
@@ -70,19 +70,14 @@ var ShoppingCart = /** @class */ (function () {
                         shopSite.style.display = 'none';
                     }
                 });
-                increaseBtn = document.getElementById('increase');
-                decreaseBtn = document.getElementById('decrease');
-                number = 0;
-                // increaseBtn.forEach((increase, effect) => {
-                //   increase.addEventListener('click', () => {
-                //     effect++;
-                //     alert(effect);
-                //   })
-                // })
-                increaseBtn === null || increaseBtn === void 0 ? void 0 : increaseBtn.addEventListener('click', function () {
-                    number++;
-                    _this.effect.textContent = number.toString();
-                    console.log("isWorking");
+                increaseBtn = document.querySelectorAll('.increase');
+                decreaseBtn = document.querySelectorAll('.decrease');
+                effect = document.querySelectorAll('.effect');
+                increaseBtn.forEach(function (increase) {
+                    increase.addEventListener('click', function () {
+                        var number = Number(effect[increase["name"]]["value"]) + 1;
+                        effect[increase["name"]]["value"] = number;
+                    });
                 });
                 return [2 /*return*/];
             });
@@ -99,7 +94,7 @@ var ShoppingCart = /** @class */ (function () {
         this.storedUsersEmail = localStorage.getItem('userAccEmail');
         this.storedUsersAddress = localStorage.getItem('userAccAddress');
         // this.storedUsersPassword = localStorage.getItem('userAccPin');
-        this.effect = document.getElementById('effect');
+        // this.effect = document.querySelectorAll('.effect') ;
         this.setUpEventListeners();
         this.initializeValues();
     }

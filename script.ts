@@ -37,7 +37,7 @@ class ShoppingCart {
     this.storedUsersEmail = localStorage.getItem('userAccEmail');
     this.storedUsersAddress = localStorage.getItem('userAccAddress');
     // this.storedUsersPassword = localStorage.getItem('userAccPin');
-    this.effect = document.getElementById('effect') as HTMLInputElement;
+    // this.effect = document.querySelectorAll('.effect') ;
     
     this.setUpEventListeners();
     this.initializeValues();
@@ -74,24 +74,24 @@ class ShoppingCart {
       }
     })
 
-    const increaseBtn = document.getElementById('increase');
-    const decreaseBtn = document.getElementById('decrease');
-    
+    const increaseBtn = document.querySelectorAll('.increase');
+    const decreaseBtn = document.querySelectorAll('.decrease');
+    const effect = document.querySelectorAll('.effect') ;
 
-    let number = 0;
-    // increaseBtn.forEach((increase, effect) => {
-    //   increase.addEventListener('click', () => {
-    //     effect++;
-    //     alert(effect);
-    //   })
-    // })
-    increaseBtn?.addEventListener('click', ()=>{
-      
-      number++;
-      this.effect.textContent = number.toString();
-      console.log("isWorking");
-
+    increaseBtn.forEach((increase) => {
+      increase.addEventListener('click', () => {
+        let number = Number(effect[increase["name"]]["value"]) + 1
+        effect[increase["name"]]["value"] = number;
+      })
     })
+    
+    // increaseBtn?.addEventListener('click', ()=>{
+      
+    //   number++;
+    //   this.effect.value = number.toString();
+    //   // console.log();
+
+    // })
     
   }      
 
