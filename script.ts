@@ -21,7 +21,7 @@ class ShoppingCart {
   private sameUserName: HTMLSpanElement;
   private cartPage: HTMLButtonElement;
   private shop: HTMLBodyElement;
-  private effect: HTMLInputElement;
+  // private effect: Element;
 
 
   constructor() {
@@ -37,13 +37,13 @@ class ShoppingCart {
     this.storedUsersEmail = localStorage.getItem('userAccEmail');
     this.storedUsersAddress = localStorage.getItem('userAccAddress');
     // this.storedUsersPassword = localStorage.getItem('userAccPin');
-    // this.effect = document.querySelectorAll('.effect') ;
+    // this.effect = document.querySelectorAll('.effect') as Element;
     
     this.setUpEventListeners();
     this.initializeValues();
   }
 
-  private setUpEventListeners = async (): Promise<void> => {
+  private setUpEventListeners(): void {
     const createBtn = document.getElementById('create') as Element;
     createBtn?.addEventListener('click', (e) => {
       e.preventDefault();
@@ -63,20 +63,22 @@ class ShoppingCart {
       }
     });
 
-    const shopSite = document.getElementById('shop-spot') as HTMLButtonElement;
-    const profilePage = document.getElementById('profile') as HTMLBodyElement;
-    const cartBtn = document.getElementById('cart-page')
-    cartBtn?.addEventListener('click', function(){
-      if(profilePage.style.display === 'none'){
-        profilePage.style.display = 'block';
-      } else{
-        shopSite.style.display = 'none';
-      }
-    })
+    // const shopSite = document.getElementById('shop-spot') as HTMLButtonElement;
+    // const profilePage = document.getElementById('profile') as HTMLBodyElement;
+    // const cartBtn = document.getElementById('cart-page')
+    // cartBtn?.addEventListener('click', function(){
+    //   if(profilePage.style.display === 'none'){
+    //     profilePage.style.display = 'block';
+    //   } else{
+    //     shopSite.style.display = 'none';
+    //   }
+    // })
 
     const increaseBtn = document.querySelectorAll('.increase');
     const decreaseBtn = document.querySelectorAll('.decrease');
-    const effect = document.querySelectorAll('.effect') ;
+    const effect = document.querySelectorAll('.effect');
+    const addingToCart = document.querySelectorAll('.shoeCart');
+    const shoeName = document.querySelectorAll('.shoeName');
 
     increaseBtn.forEach((increase) => {
       increase.addEventListener('click', () => {
@@ -85,6 +87,74 @@ class ShoppingCart {
       })
     })
     
+    decreaseBtn.forEach((decrease) => {
+      
+      decrease.addEventListener('click', () => {
+
+        let num = Number(effect[decrease["name"]]["value"]);
+        if(num <= 0){
+          num = num;
+        }else{
+          num = num - 1;
+        }
+        effect[decrease["name"]]["value"] = num;
+      })
+    })
+
+    // addingToCart.forEach((cartAdd) => {
+    //   cartAdd.addEventListener('click', () => {
+    //     const effectIndex = (cartAdd as HTMLInputElement).dataset.effect;
+    //     const effectElement = effect[effectIndex];
+        
+    //     if (effectElement.value === '0') {
+    //       alert('Please, add to cart first.');
+    //     }
+    //   });
+    // });
+    
+
+
+
+    addingToCart.forEach((cartAdd) => {
+      cartAdd.addEventListener('click', () => {
+        const effectIndex = (cartAdd as HTMLButtonElement).dataset.effect;
+        
+        if (effectIndex !== undefined) {
+          const effectElement = effect[parseInt(effectIndex, 10)] as HTMLInputElement;
+          
+          if (effectElement.value === '0') {
+            alert('Please, add to cart first.');
+          } else if (effectElement.value > '0'){
+            const shoeNameElement = shoeName[parseInt(effectIndex, 10)] as HTMLElement;
+            const cartItems = document.getElementById('cartItems') as HTMLUListElement;
+            const listItem = document.createElement('li');
+            listItem.textContent = shoeNameElement.textContent || '';
+            cartItems.appendChild(listItem);
+          }
+          
+        }
+        
+      });
+    });
+    
+
+
+
+    // effect.forEach((element: Element) => {
+    //   const value = (element as HTMLInputElement).value;
+    //   addingToCart.forEach((cartAdd) => {
+    //     cartAdd.addEventListener('click', ()=> {
+    //       if(value === '0'){
+    //         alert("Please, add to cart first.")
+    //       }
+    //     })
+    //   })
+    // });
+    
+
+
+
+
     // increaseBtn?.addEventListener('click', ()=>{
       
     //   number++;
